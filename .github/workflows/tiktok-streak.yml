@@ -1,0 +1,44 @@
+name: TikTok Streak Bot
+
+on:
+  schedule:
+    # Run daily at 8:00 AM UTC (adjust as needed)
+    - cron: '0 8 * * *'
+  
+  # Allow manual triggering for testing
+  workflow_dispatch:
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      - name: Install Chrome
+        run: |
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Create .env file
+        run: |
+          echo "TIKTOK_USERNAME=${{ secrets.TIKTOK_USERNAME }}" > .env
+          echo "TIKTOK_PASSWORD=${{ secrets.TIKTOK_PASSWORD }}" >> .env
+          echo "FRIEND_USERNAME=${{ secrets.FRIEND_USERNAME }}" >> .env
+          echo "RUNNING_IN_CONTAINER=true" >> .env
+      
+      - name: Run TikTok bot
+        run: python cloud_tiktok_bot.py
