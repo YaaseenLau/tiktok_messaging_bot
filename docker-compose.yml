@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  tiktok-bot:
+    build: .
+    container_name: tiktok-streak-bot
+    volumes:
+      - ./content:/app/content
+      - ./logs:/app/logs
+    env_file:
+      - .env
+    restart: unless-stopped
