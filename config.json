@@ -1,0 +1,49 @@
+{
+  "content_preferences": {
+    "video_topics": [
+      "comedy",
+      "cooking",
+      "travel",
+      "pets",
+      "dance",
+      "fashion",
+      "fitness",
+      "life_hacks",
+      "music",
+      "art"
+    ],
+    "image_folders": [
+      "memes",
+      "quotes",
+      "nature",
+      "food",
+      "pets"
+    ],
+    "message_templates": [
+      "Hey! Keeping our streak alive with these cool TikToks! What do you think? 😊",
+      "Streak day! Found these videos that made me think of you!",
+      "Don't want to break our streak! Check these out! 🔥",
+      "Streak check! ✓ Thought you might enjoy these today!",
+      "Hey streak buddy! These TikToks are trending today!"
+    ]
+  },
+  "search_terms": {
+    "comedy": ["funny", "comedy", "laugh", "joke", "humor"],
+    "cooking": ["recipe", "cooking", "food", "chef", "baking"],
+    "travel": ["travel", "vacation", "adventure", "destination", "explore"],
+    "pets": ["cute animals", "dogs", "cats", "pet", "animal"],
+    "dance": ["dance", "choreography", "dancer", "trending dance"],
+    "fashion": ["outfit", "style", "fashion", "clothing", "trend"],
+    "fitness": ["workout", "fitness", "exercise", "gym", "training"],
+    "life_hacks": ["life hack", "diy", "tips", "tricks", "how to"],
+    "music": ["song", "music", "singer", "band", "concert"],
+    "art": ["art", "drawing", "painting", "creative", "artist"]
+  },
+  "image_paths": {
+    "memes": "./content/images/memes",
+    "quotes": "./content/images/quotes",
+    "nature": "./content/images/nature",
+    "food": "./content/images/food",
+    "pets": "./content/images/pets"
+  }
+}
